@@ -1,0 +1,130 @@
+{
+  "task": "multiblur",
+  "model": "multiblur",
+  "gpu_ids": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "n_channels": 3,
+  "merge_bn": false,
+  "merge_bn_startpoint": 300000,
+  "datasets": {
+    "train": {
+      "name": "train_dataset",
+      "dataset_type": "multiblur",
+      "dataroot_H": "\\\\bean.postech.ac.kr/data/lyk/cocoapi/images/train2014",
+      "dataroot_L": null,
+      "H_size": 256,
+      "use_flip": true,
+      "use_rot": true,
+      "scales": [
+        1
+      ],
+      "sigma": [
+        0,
+        25
+      ],
+      "dataloader_shuffle": true,
+      "dataloader_num_workers": 4,
+      "dataloader_batch_size": 16,
+      "coco_annotation_path": "\\\\bean.postech.ac.kr/data/lyk/cocoapi/annotations/instances_train2014.json",
+      "phase": "train",
+      "scale": 1,
+      "n_channels": 3
+    },
+    "test": {
+      "name": "test_dataset",
+      "dataset_type": "multiblur",
+      "dataroot_H": "\\\\bean.postech.ac.kr/data/lyk/cocoapi/images/val2014",
+      "dataroot_L": null,
+      "H_size": 256,
+      "use_flip": true,
+      "use_rot": true,
+      "sigma": [
+        0,
+        1
+      ],
+      "scales": [
+        1
+      ],
+      "dataloader_shuffle": true,
+      "dataloader_num_workers": 4,
+      "dataloader_batch_size": 16,
+      "coco_annotation_path": "\\\\bean.postech.ac.kr/data/lyk/cocoapi/annotations/instances_val2014.json",
+      "phase": "test",
+      "scale": 1,
+      "n_channels": 3
+    }
+  },
+  "path": {
+    "root": "SR",
+    "pretrained_netG": "model_zoo/resunet_big_full.pth",
+    "task": "SR\\multiblur",
+    "log": "SR\\multiblur",
+    "options": "SR\\multiblur\\options",
+    "models": "SR\\multiblur\\models",
+    "images": "SR\\multiblur\\images"
+  },
+  "netG": {
+    "net_type": "multiblur",
+    "n_iter": 8,
+    "h_nc": 64,
+    "in_nc": 4,
+    "out_nc": 3,
+    "nc": [
+      64,
+      128,
+      256,
+      512
+    ],
+    "nb": 2,
+    "act_mode": "R",
+    "upsample_mode": "convtranspose",
+    "downsample_mode": "strideconv",
+    "init_type": "orthogonal",
+    "init_bn_type": "uniform",
+    "init_gain": 0.2,
+    "scale": 1
+  },
+  "train": {
+    "G_lossfn_type": "l1",
+    "G_lossfn_weight": 1.0,
+    "G_optimizer_type": "adam",
+    "G_optimizer_lr": 0.0001,
+    "G_optimizer_wd": 0,
+    "G_optimizer_clipgrad": null,
+    "G_scheduler_type": "MultiStepLR",
+    "G_scheduler_milestones": [
+      2000,
+      8000,
+      12000,
+      16000,
+      20000
+    ],
+    "G_scheduler_gamma": 0.5,
+    "G_regularizer_orthstep": null,
+    "G_regularizer_clipstep": null,
+    "checkpoint_test": 500,
+    "checkpoint_save": 500,
+    "checkpoint_print": 50,
+    "n_epochs": 200,
+    "current_step": 0,
+    "F_feature_layer": 34,
+    "F_weights": 1.0,
+    "F_lossfn_type": "l1",
+    "F_use_input_norm": true,
+    "F_use_range_norm": false,
+    "G_optimizer_reuse": false,
+    "G_param_strict": true,
+    "E_param_strict": true,
+    "E_decay": 0
+  },
+  "opt_path": "options/deblur.json",
+  "is_train": true,
+  "scale": 1,
+  "find_unused_parameters": true,
+  "dist": false,
+  "num_gpu": 4
+}
