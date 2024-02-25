@@ -29,7 +29,7 @@
         25
       ],
       "dataloader_shuffle": true,
-      "dataloader_num_workers": 4,
+      "dataloader_num_workers": 1,
       "dataloader_batch_size": 16,
       "coco_annotation_path": "/datasets/cocoapi/annotations/instances_train2014.json"
     },
@@ -50,7 +50,7 @@
         1
       ],
       "dataloader_shuffle": true,
-      "dataloader_num_workers": 4,
+      "dataloader_num_workers": 1,
       "dataloader_batch_size": 16,
       "coco_annotation_path": "/datasets/cocoapi/annotations/instances_val2014.json"
     }
