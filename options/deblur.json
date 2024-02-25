@@ -15,7 +15,7 @@
     "train": {
       "name": "train_dataset",
       "dataset_type": "multiblur",
-      "dataroot_H": "\\\\bean.postech.ac.kr/data/lyk/cocoapi/images/train2014",
+      "dataroot_H": "/datasets/cocoapi/images/train2014",
       "dataroot_L": null,
       "H_size": 256 // 128 | 192
       ,
@@ -31,12 +31,12 @@
       "dataloader_shuffle": true,
       "dataloader_num_workers": 4,
       "dataloader_batch_size": 16,
-      "coco_annotation_path": "\\\\bean.postech.ac.kr/data/lyk/cocoapi/annotations/instances_train2014.json"
+      "coco_annotation_path": "/datasets/cocoapi/annotations/instances_train2014.json"
     },
     "test": {
       "name": "test_dataset",
       "dataset_type": "multiblur",
-      "dataroot_H": "\\\\bean.postech.ac.kr/data/lyk/cocoapi/images/val2014",
+      "dataroot_H": "/datasets/cocoapi/images/val2014",
       "dataroot_L": null,
       "H_size": 256 // 128 | 192
       ,
@@ -52,7 +52,7 @@
       "dataloader_shuffle": true,
       "dataloader_num_workers": 4,
       "dataloader_batch_size": 16,
-      "coco_annotation_path": "\\\\bean.postech.ac.kr/data/lyk/cocoapi/annotations/instances_val2014.json"
+      "coco_annotation_path": "/datasets/cocoapi/annotations/instances_val2014.json"
     }
   },
   "path": {
