@@ -166,7 +166,7 @@ def main(json_path="options/train_mbsr.json"):
             # 5) save model
             # -------------------------------
             if current_step % opt["train"]["checkpoint_save"] == 0:
-                logger.info("Saving the model.")
+                logger.info(f"Saving the model. (dir: {model.save_dir})")
                 model.save(current_step)
 
             # -------------------------------
