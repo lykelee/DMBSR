@@ -76,7 +76,12 @@
     "reduction": 16,
     "act_mode": "R",
     "upsample_mode": "convtranspose",
-    "downsample_mode": "strideconv"
+    "downsample_mode": "strideconv",
+    "init_type": "xavier_uniform" // "orthogonal" | "normal" | "uniform" | "xavier_normal" | "xavier_uniform" | "kaiming_normal" | "kaiming_uniform"
+    ,
+    "init_bn_type": "uniform" // "uniform" | "constant"
+    ,
+    "init_gain": 0.2
   },
   "train": {
     "G_lossfn_type": "l1" // "l1" | "l2sum" | "l2" | "ssim"
