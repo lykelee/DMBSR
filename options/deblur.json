@@ -63,6 +63,7 @@
     "h_nc": 64,
     "in_nc": 4,
     "out_nc": 3,
+    "ksize": 25,
     "nc": [
       64,
       128,
@@ -70,19 +71,12 @@
       512
     ],
     "nb": 2,
-    "act_mode": "R" // "BR" for BN+ReLU | "R" for ReLU
-    ,
-    "upsample_mode": "convtranspose" // "pixelshuffle" | "convtranspose" | "upconv"
-    ,
-    "downsample_mode": "strideconv" // "strideconv" | "avgpool" | "maxpool"
-    ,
-    "init_type": "orthogonal" // "orthogonal" | "normal" | "uniform" | "xavier_normal" | "xavier_uniform" | "kaiming_normal" | "kaiming_uniform"
-    ,
-    "init_bn_type": "uniform" // "uniform" | "constant"
-    ,
-    "init_gain": 0.2,
     "gc": 32,
-    "ng": 2
+    "ng": 2,
+    "reduction": 16,
+    "act_mode": "R",
+    "upsample_mode": "convtranspose",
+    "downsample_mode": "strideconv"
   },
   "train": {
     "G_lossfn_type": "l1" // "l1" | "l2sum" | "l2" | "ssim"
