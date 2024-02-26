@@ -3,7 +3,9 @@
   "model": "multiblur",
   "gpu_ids": [
     0,
-    1
+    1,
+    2,
+    3
   ],
   "n_channels": 3 // 1 for grayscale image restoration, 3 for color image restoration
   ,
