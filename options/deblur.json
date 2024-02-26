@@ -54,8 +54,8 @@
     }
   },
   "path": {
-    "root": "/outputs/DMBSR/SR",
-    "pretrained_netG": "model_zoo/DMBSR.pth"
+    "root": "/outputs/DMBSR/SR" //,
+    //"pretrained_netG": "model_zoo/DMBSR.pth"
   },
   "netG": {
     "net_type": "dmbsr",
