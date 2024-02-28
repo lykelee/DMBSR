@@ -54,8 +54,8 @@
     }
   },
   "path": {
-    "root": "/outputs/DMBSR/SR" //,
-    //"pretrained_netG": "model_zoo/DMBSR.pth"
+    "root": "/outputs/DMBSR/SR",
+    "pretrained_netG": "outputs/DMBSR/SR/multiblur/models/45000_G.pth"
   },
   "netG": {
     "net_type": "dmbsr",
@@ -102,9 +102,9 @@
     "G_scheduler_gamma": 0.5,
     "G_regularizer_orthstep": null,
     "G_regularizer_clipstep": null,
-    "checkpoint_test": 1000,
-    "checkpoint_save": 1000,
-    "checkpoint_print": 100,
+    "checkpoint_test": 5000,
+    "checkpoint_save": 5000,
+    "checkpoint_print": 200,
     "n_epochs": 200,
     "current_step": 0,
     "manual_seed": 0
